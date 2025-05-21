@@ -1,8 +1,8 @@
-# Testes Automatizados com Cypress - Site do WC Aquino
+# Testes Automatizados com Cypress - Sites do WC Aquinoe e Fake REST API
 
 Este projeto contém testes automatizados utilizando o Cypress, com foco na prática de interações com componentes HTML, janelas de diálogo (`alert`, `confirm`, `prompt`) e testes de API no site de testes do fakerestapi.
 
-📍 Site testado: [https://www.wcaquino.me/cypress/componentes.html](https://fakerestapi.azurewebsites.net/index.html)
+📍 Site testado: [https://www.wcaquino.me/cypress/componentes.html] [https://fakerestapi.azurewebsites.net/index.html]
 
 ---
 
