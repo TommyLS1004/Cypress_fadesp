@@ -38,7 +38,39 @@ describe('Teste no site do WC Aquino', () => {
           expect(msg).to.equal('Sobrenome eh obrigatorio')
         })
       })
-      
+
+  it('deve simular prompt e cancelar no confirm', () => {
+    cy.window().then((win) => {
+      cy.stub(win, 'prompt').returns('10')
+      const confirmStub = cy.stub(win, 'confirm').returns(false)
+      const alertStub = cy.stub(win, 'alert')
+  
+      cy.get('#prompt').click().then(() => {
+        expect(confirmStub.getCall(0)).to.be.calledWith('Era 10?')
+        expect(alertStub.getCall(0)).to.be.calledWith(':(')
+      })
+    })
+  })
+  it('deve simular prompt, confirmar valor e verificar o alert final', () => {
+    cy.window().then((win) => {
+      cy.stub(win, 'prompt').returns('42') // Simula o valor digitado no prompt
+  
+      // Stub do confirm
+      const confirmStub = cy.stub(win, 'confirm').returns(true)
+      const alertStub = cy.stub(win, 'alert') // Captura qualquer alert
+  
+      // Clica no botão que ativa os diálogos
+      cy.get('#prompt').click().then(() => {
+        // Valida se o confirm recebeu a mensagem certa
+        expect(confirmStub.getCall(0)).to.be.calledWith('Era 42?')
+  
+        // Valida se o alert final foi ":D"
+        expect(alertStub.getCall(0)).to.be.calledWith(':D')
+      })
+    })
+  })
+   
+  
   
     it('deve submeter o formulário', () => {
       cy.get('#formNome').type('Thomas')
