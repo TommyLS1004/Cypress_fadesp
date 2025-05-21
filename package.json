@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/TommyLS1004/Cypress_fadesp#readme",
   "devDependencies": {
-    "cypress": "^14.4.0"
+    "@types/node": "^22.15.21",
+    "cypress": "^14.4.0",
+    "typescript": "^5.8.3"
   }
 }
