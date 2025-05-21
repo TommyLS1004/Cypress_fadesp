@@ -74,7 +74,7 @@ teste-cypress/
 
 - [Cypress](https://www.cypress.io/) – Framework de testes end-to-end
 - JavaScript ES6
-
+- TypeScript
 ---
 
 ## ✍️ Autor
@@ -82,6 +82,5 @@ teste-cypress/
 Desenvolvido por **Thomas** como teste para um processo seletivo automatizados com Cypress.
 
 ---
--y
    ```
 
