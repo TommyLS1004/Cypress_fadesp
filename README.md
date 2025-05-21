@@ -36,7 +36,7 @@ teste-cypress/
 │       └── 1-teste-site
 |           ├──2-teste-site-typescript
 |              └── formulario.cy.ts
-|           └── login.cy.js
+|       └── login.cy.js
 ├── cypress.config.js
 ├── node_modules/
 ├── package.json
