@@ -33,7 +33,10 @@ Este projeto contém testes automatizados utilizando o Cypress, com foco na prá
 teste-cypress/
 ├── cypress/
 │   └── e2e/
-│       └── componentes.cy.js
+│       └── 1-teste-site
+|           ├──2-teste-site-typescript
+|              └── formulario.cy.ts
+|           └── login.cy.js
 ├── cypress.config.js
 ├── node_modules/
 ├── package.json
@@ -76,6 +79,9 @@ teste-cypress/
 
 ## ✍️ Autor
 
-Desenvolvido por **Thomas** como parte do aprendizado em testes automatizados com Cypress.
+Desenvolvido por **Thomas** como teste para um processo seletivo automatizados com Cypress.
 
 ---
+-y
+   ```
+
