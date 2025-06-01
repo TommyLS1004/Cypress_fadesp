@@ -1,4 +1,4 @@
-# Testes Automatizados com Cypress - Sites do WC Aquinoe e Fake REST API
+# Testes Automatizados com Cypress - Sites do WC Aquino e Fake REST API
 
 Este projeto contém testes automatizados utilizando o Cypress, com foco na prática de interações com componentes HTML, janelas de diálogo (`alert`, `confirm`, `prompt`) e testes de API no site de testes do fakerestapi.
 
@@ -75,6 +75,32 @@ Este projeto contém testes automatizados utilizando o Cypress, com foco na prá
    - Primeiro, cria um novo livro enviando uma requisição `POST` para o endpoint `/Books`.
    - Em seguida, envia uma requisição `DELETE` para o endpoint `/Books/{id}` com o ID do livro recém-criado.
    - Valida que o status da resposta é `200`.
+
+---
+
+## ⚠️ Desafios encontrados
+
+Durante o desenvolvimento dos testes, alguns desafios foram enfrentados:
+
+1. **Erro ao validar alertas com mensagens dinâmicas**  
+   - **Problema:** O Cypress não capturava corretamente mensagens de `window.alert` quando o texto era gerado dinamicamente.  
+   - **Solução:** Foi necessário usar o evento `cy.on('window:alert')` para interceptar e validar as mensagens.
+
+2. **Problemas com o endpoint de API `/Books`**  
+   - **Problema:** Algumas requisições `POST` falhavam devido a IDs duplicados.  
+   - **Solução:** Foi implementado um ID único para cada livro criado nos testes, garantindo que não houvesse conflitos.
+
+3. **Inconsistência no tempo de resposta da API**  
+   - **Problema:** A API apresentava lentidão em alguns momentos, causando falhas nos testes.  
+   - **Solução:** Foi adicionado um `timeout` maior nas requisições para lidar com a latência.
+
+4. **Erro ao manipular o campo `select[multiple]`**  
+   - **Problema:** O Cypress não selecionava corretamente múltiplas opções no campo de esportes.  
+   - **Solução:** Foi necessário usar o método `cy.get().select()` com um array de valores para selecionar múltiplas opções.
+
+5. **Datas no formato ISO geradas incorretamente**  
+   - **Problema:** O campo `publishDate` gerava datas no formato incorreto, causando erros na validação.  
+   - **Solução:** Foi utilizado `new Date().toISOString()` para garantir o formato correto.
 
 ---
 
